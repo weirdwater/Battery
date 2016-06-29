@@ -1,0 +1,61 @@
+body {
+  text-align: center;
+}
+
+a,
+img {
+  display: block;
+}
+
+.battery {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 360px;
+  margin: 5em auto;
+  background: url("battery-empty.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 140px;
+    height: 280px; // min: 0, max: 280
+    border-radius: 2px;
+    background-color: #0a8a2a;
+    box-shadow: 0 0 1em #0a8a2a;
+    transition: 2s;
+  }
+
+  &[data-status="critical"] {
+    &::before {
+      height: 25px;
+      background: #800;
+      box-shadow: 0 0 1em #800;
+    }
+  }
+  &[data-status="low"] {
+    &::before {
+      height: 75px;
+      background: #b43d0a;
+      box-shadow: 0 0 1em #b43d0a
+    }
+  }
+  &[data-status="normal"] {
+    &::before {
+      height: 175px;
+      background: #5daf00;
+      box-shadow: 0 0 1em #5daf00;
+    }
+  }
+  &[data-glow="false"] {
+    &::before {
+      box-shadow: 0 0 0;
+    }
+  }
+}
