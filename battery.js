@@ -1,11 +1,11 @@
 class Battery {
-    constructor(top, right, left, maxHeight = 110, minHeight = 0) {
+    constructor(top, right, left, maxHeight = 115, minHeight = 0) {
       this.top = document.getElementById(top);
       this.right = document.getElementById(right);
       this.left = document.getElementById(left);
       this.maxVal = maxHeight;
       this.minVal = minHeight;
-      this.startVal = this.top.style.height;
+      this.startVal = this.top.parentNode.style.height;
     }
 
     setPercentage(percentage) {
