@@ -36,8 +36,25 @@
     box-shadow: 0 0 0; }
 
 @-webkit-keyframes wave {
+  0%, 100% {
+    box-shadow: 0 0 60px #99f56d; }
   50% {
-    box-shadow: 0 0 5px #58fb7f; } }
+    box-shadow: 0 0 5px #99f56d; } }
+@-webkit-keyframes wave--normal {
+  0%, 100% {
+    box-shadow: 0 0 60px #8ee32d; }
+  50% {
+    box-shadow: 0 0 5px #8ee32d; } }
+@-webkit-keyframes wave--low {
+  0%, 100% {
+    box-shadow: 0 0 60px #e86c37; }
+  50% {
+    box-shadow: 0 0 5px #e86c37; } }
+@-webkit-keyframes wave--critical {
+  0%, 100% {
+    box-shadow: 0 0 60px #d61e1e; }
+  50% {
+    box-shadow: 0 0 5px #d61e1e; } }
 .iso__landscape {
   margin-top: 5em;
   position: relative;
@@ -72,20 +89,11 @@
   height: 100%;
   position: absolute;
   width: 100%;
-  box-shadow: 0 0 60px #58fb7f;
-  transition: 2s;
-  -webkit-animation: wave 5s ease-in-out infinite; }
+  transition: 2s; }
   .iso__cube--top {
-    background-color: #60e61a;
     position: relative;
     transform: translateZ(156px);
     transform-style: preserve-3d; }
-    .iso__cube--top[data-status=normal] {
-      background-color: #7dda14; }
-    .iso__cube--top[data-status=low] {
-      background-color: #de5013; }
-    .iso__cube--top[data-status=critical] {
-      background: #b60a0a; }
   .iso__cube--left {
     width: 200px;
     transform: rotateY(-90deg) translateX(50%) translateZ(-6px); }
@@ -93,13 +101,17 @@
     height: 200px;
     transform: rotateX(90deg) translateY(50%) translateZ(-6px); }
 .iso__battery-charge, .iso__cube {
-  background-color: #52ce17; }
+  background-color: #52ce17;
+  -webkit-animation: wave 5s ease-in-out infinite; }
   .iso__battery-charge[data-status=normal], .iso__cube[data-status=normal] {
-    background-color: #5daf00; }
+    background-color: #5daf00;
+    -webkit-animation: wave--normal 5s ease-in-out infinite; }
   .iso__battery-charge[data-status=low], .iso__cube[data-status=low] {
-    background-color: #b43d0a; }
+    background-color: #b43d0a;
+    -webkit-animation: wave--low 5s ease-in-out infinite; }
   .iso__battery-charge[data-status=critical], .iso__cube[data-status=critical] {
-    background-color: #800; }
+    background-color: #800;
+    -webkit-animation: wave--critical 5s ease-in-out infinite; }
 
 body {
   text-align: center; }
