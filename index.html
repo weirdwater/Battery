@@ -10,11 +10,18 @@
     <link rel="stylesheet" href="style.css" media="screen" title="default" charset="utf-8" />
   </head>
   <body>
-    <div id="battery" class="battery" data-status="critical">
+    <div class="iso__landscape">
+      <div class="iso__battery" >
+        <div class="iso__battery-charge">
+          <div class="iso__cube iso__cube--right" data-size="100"></div>
+          <div class="iso__cube iso__cube--top" data-size="100"></div>
+          <div class="iso__cube iso__cube--left" data-size="100"></div>
+        </div>
+        <img src="img/iso_battery.png" alt="" />
+      </div>
+      <a href="#" class="first-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Nieuwe Melding</a><br />
 
     </div>
-    <a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Nieuwe Melding</a><br />
-    <a href="#" class="to-incident-list-button mdl-button mdl-js-button.mdl-button--colored mdl-js-ripple-effect">Bestaande meldingen</a>
     <script src="battery.js"></script>
   </body>
 </html>
