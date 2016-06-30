@@ -30,6 +30,7 @@
   }
 
   &__battery-charge {
+    background: #800;
     position: absolute;
     bottom: -6%;
     left: 50%;
@@ -47,6 +48,7 @@
     width: 100%;
     background-color: #52ce17;
     box-shadow: 0 0 60px rgb(88, 251, 127);
+    transition: 2s;
     -webkit-animation: wave 5s ease-in-out infinite;
 
     &--top {
@@ -54,17 +56,33 @@
       position: relative;
       transform: translateZ(156px);
       transform-style: preserve-3d;
-      transition: .25s;
+      &[data-status=normal] {
+        background-color: #7dda14;
+      }
+      &[data-status=low] {
+        background-color: #de5013;
+      }
+      &[data-status=critical] {
+        background: #b60a0a;
+      }
     }
     &--left {
-      height: 150%;
-      transform: rotateX(-90deg) translateY(-50px);
-      transform-origin: 100% 66%;
+      width: 200px;
+      transform: rotateY(-90deg) translateX(50%) translateZ(-6px);
     }
     &--right {
-      width: 150%;
-      transform: rotateY(90deg) translateX(-50px);
-      transform-origin: 66% 0%;
+      height: 200px;
+      transform: rotateX(90deg)  translateY(50%) translateZ(-6px);
+    }
+
+    &[data-status=normal] {
+      background-color: #5daf00;
+    }
+    &[data-status=low] {
+      background-color: #b43d0a;
+    }
+    &[data-status=critical] {
+      background-color: #800;
     }
   }
 }
